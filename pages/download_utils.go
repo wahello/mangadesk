@@ -200,8 +200,8 @@ func generateChapterFolderNames(m *mangodex.Manga, c *mangodex.Chapter) (string,
 	// Remove all invalid folder characters from folder name
 	restrictedChars := []string{"<", ">", ":", "/", "|", "?", "*", "\"", "\\", "."}
 	for s := range restrictedChars {
-		mangaName = strings.ReplaceAll(mangaName, restrictedChars[s], "")
-		generatedName = strings.ReplaceAll(generatedName, restrictedChars[s], "")
+		mangaName = strings.ReplaceAll(mangaName, restrictedChars[s], "_")
+		generatedName = strings.ReplaceAll(generatedName, restrictedChars[s], "_")
 	}
 	return mangaName, generatedName
 }
